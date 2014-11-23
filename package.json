@@ -1,0 +1,11 @@
+{
+	"name": "ep_copyandpost",
+	"version": "0.0.1",
+	"description": "A plugin that enables us to copy the current selected text and post it to a configurable uri.",
+	"author": "Glocal Cooperative <info@glocal.com>",
+	"contributors": [
+    "Ross Glover <ross@glocal.coop>",
+    "Thiago de Mello Bueno <thiago@madeofpeople.org>"
+  ],
+	"engines": { "node": ">= 0.6.0"}
+}
