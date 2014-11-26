@@ -1,24 +1,33 @@
+// bring in etherpad's jquery for some dom manipulation
 var $ = require('ep_etherpad-lite/static/js/rjquery').$;
 
+// postAceInit
+// This is where we add buttons and such
+// See the /index.js file and the templates directory.
 exports.postAceInit = function(hook, context, cb){
 
-  // lets make this a loop, and deal with all the buttons
+  // @todo lets make this a loop, and deal with all the buttons
   // make the buttons configurable in the settings file
   // label, uri, iconclass
 
   // bind method to post button
   $('.post-selection-button').click(function(e){
+
     // get the selection
     var selectedText = getSelection(context);
+
     // post to configured uri here!
     // console.log( ">>>>>", clientVars );
     postSelection( selectedText, clientVars.postSelectionURI );
+
     // stop the click event default action (which would possibly deselect the selection)
     e.preventDefault();
+
   });
 
 };
 
+// not sure we need this right now
 exports.editorInfo = function(hook_name, context, cb) {
   console.log( 'editorInfo', hook_name, context, cb );
 };
@@ -30,6 +39,8 @@ function postSelection( selectedText, uri ) {
     alert( "Post selection (see console) to " + uri );
 };
 
+// getSelection
+// get the selected text from within the ace editor
 function getSelection(context) {
   // console.log('getSelection', context);
   // not sure what the second argument of "callWithAce" (in this case  "getrep") is supposed to do
