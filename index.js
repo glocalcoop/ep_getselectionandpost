@@ -4,7 +4,8 @@ var settings =  eejs = require("ep_etherpad-lite/node/utils/settings");
 // eejs for templating
 var eejs = require("ep_etherpad-lite/node/eejs/");
 
-// set up settings for the plugins
+// set up settings for the plugins, adding directly to settings.php for now
+// doesn't seem PATHTOETHERPAD/admin/plugins is quite working right now.
 exports.clientVars = function( hook_name, args, cb ) {
   return cb({ "postSelectionURI": settings.ep_copyselectionandpost.postSelectionURI });
 }
