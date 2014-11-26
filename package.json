@@ -1,11 +1,28 @@
 {
-	"name": "ep_copyandpost",
-	"version": "0.0.1",
-	"description": "A plugin that enables us to copy the current selected text and post it to a configurable uri.",
-	"author": "Glocal Cooperative <info@glocal.com>",
-	"contributors": [
-    "Ross Glover <ross@glocal.coop>",
-    "Thiago de Mello Bueno <thiago@madeofpeople.org>"
+  "name": "ep_copyselectionandpost",
+  "version": "0.0.1",
+  "description": "A plugin that enables us to copy the current selected text and post it to a configurable uri.",
+  "author": {
+    "name": "Glocal Cooperative",
+    "email": "info@glocal.com"
+  },
+  "contributors": [
+    {
+      "name": "Ross Glover",
+      "email": "ross@glocal.coop"
+    },
+    {
+      "name": "Thiago de Mello Bueno",
+      "email": "thiago@madeofpeople.org"
+    }
   ],
-	"engines": { "node": ">= 0.6.0"}
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "readme": "Copy Selection and Post. A plugin that enables us to copy the current selected text and post it to a configurable uri.\n\n## Resources\n\n- [Creating a Plugin](https://github.com/ether/etherpad-lite/wiki/Creating-a-plugin)\n- [EtherPad Base Plugin](https://github.com/niklasfi/ep_base)\n  - A basic example of an Etherpad plugin (we're following this pattern).\n- [jQuery EtherPad plugin](https://github.com/ether/etherpad-lite-jquery-plugin)\n  - Loads an etherpad into a page, makes contents copyable to a div.\n- [Etherpad HTTP Api](http://etherpad.org/doc/v1.4.1/#index_http_api)\n  -[What Can I Do with this API?](http://etherpad.org/doc/v1.4.1/#index_what_can_i_do_with_this_api)\n\n\n## Notes\n- Client side hooks go into static/js\n- Images and css files go in static/images and static/css respectively\n- \"If your plugin adds or modifies the front end HTML (e.g. adding buttons or changing their functions), you should put the necessary HTML code for such operations in templates/, in files of type \".ejs\", since Etherpad-Lite uses EJS for HTML templating.\" — [Creating a Plugin](https://github.com/ether/etherpad-lite/wiki/Creating-a-plugin)\n\n## Installing\n  npm install PATH/TO/THIS/FOLDER (from your etherpad-lite folder)",
+  "readmeFilename": "README.md",
+  "_id": "ep_copyselectionandpost@0.0.1",
+  "dist": {
+    "shasum": "120d274c8d720d9e97db6bc27d039a31d012af4e"
+  }
 }

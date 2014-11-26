@@ -1,13 +1,14 @@
 {
-    "parts": [
-        {
-            "name": "copyandpost",
-            "hooks": {
-                "HOOKNAME" : "ep_FOLDERNAME/index:FUNCTIONNAME1"
-            },
-            "client_hooks": {
-                "CLIENT_HOOKNAME" : "ep_FOLDERNAME/static/js/index:FUNCTIONNAME1"
-            }
-        }
-    ]
+  "parts": [{
+    "name": "copyselectionandpost",
+    "hooks": {
+      "eejsBlock_editbarMenuRight": "ep_copyselectionandpost/index",
+      "eejsBlock_dd_format": "ep_copyselectionandpost/index",
+      "clientVars": "ep_copyselectionandpost/index"
+    },
+    "client_hooks": {
+      "editorInfo": "ep_copyselectionandpost/static/js/index",
+      "postAceInit": "ep_copyselectionandpost/static/js/index"
+    }
+  }]
 }

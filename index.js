@@ -1,5 +1,22 @@
-exports.copySelection = function(hook, context){
+// settings: load up the etherpad settings
+var settings =  eejs = require("ep_etherpad-lite/node/utils/settings");
+
+// eejs for templating
+var eejs = require("ep_etherpad-lite/node/eejs/");
+
+// set up settings for the plugins
+exports.clientVars = function( hook_name, args, cb ) {
+  return cb({ "postSelectionURI": settings.ep_copyselectionandpost.postSelectionURI });
 }
 
-exports.postContents = function(hook, context){
+// add buton to the nav bar (see template file below)
+exports.eejsBlock_editbarMenuRight = function(hook_name, args, cb) {
+  args.content = args.content + eejs.require("ep_copyselectionandpost/templates/editbarButtons.ejs");
+  return cb();
+}
+
+// add menu link
+exports.eejsBlock_dd_format = function (hook_name, args, cb) {
+  args.content = args.content + eejs.require("ep_copyselectionandpost/templates/fileMenu.ejs");
+  return cb();
 }
