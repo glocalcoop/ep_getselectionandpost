@@ -5,31 +5,23 @@ var $ = require('ep_etherpad-lite/static/js/rjquery').$;
 // This is where we add buttons and such
 // See the /index.js file and the templates directory.
 exports.postAceInit = function(hook, context, cb){
-
-  // @todo lets make this a loop, and deal with all the buttons
-  // make the buttons configurable in the settings file
-  // label, uri, iconclass
-
   // bind method to post button
-  $('.post-selection-button').click(function(e){
-
-    // get the selection
-    var selectedText = getSelection(context);
-
-    // post to configured uri here!
-    // console.log( ">>>>>", clientVars );
-    postSelection( selectedText, clientVars.postSelectionURI );
-
-    // stop the click event default action (which would possibly deselect the selection)
-    e.preventDefault();
-
+  clientVars.actions.forEach( function(action){
+    instantiateButton( action, context );
   });
-
 };
 
-// not sure we need this right now
-exports.editorInfo = function(hook_name, context, cb) {
-  console.log( 'editorInfo', hook_name, context, cb );
+// instantiateButton
+// sets up a button with the propoer action
+function instantiateButton( action, context ) {
+  $('#'+action.id).click(function(e){
+    // get the selection
+    var selectedText = getSelection(context);
+    // post to configured uri here!
+     postSelection( selectedText, action.uri );
+    // stop the click event default action (which would possibly deselect the selection)
+    e.preventDefault();
+  });
 };
 
 // postSelection
@@ -53,19 +45,21 @@ function getSelection(context) {
         text = rep.alltext,
         howMany =  rep.selEnd[0]-1, // how many lines to grab
         // get only the lines in the selection
-        linesAsArray = text.split("\n").splice( rep.selStart[0], howMany );
+        linesAsArray = text.split("\n").splice( rep.selStart[0], howMany ),
+        // when the startline and the end line are the same, we need to adjust
+        selEnd = ( linesAsArray.length === 1 )? rep.selEnd[1]-rep.selStart[1] : rep.selEnd[1];
+
     // console.log( "how many lines?", rep.alines.length)
     // console.log( "howmany lines to grab?", howMany );
-    // console.log("selectionStarts on line: ", rep.selStart[0], "and col:", rep.selStart[1] );
-    // console.log("selectionEnds on line: ", rep.selEnd[0], "and col:", rep.selEnd[1] );
+    console.log("selectionStarts on line: ", rep.selStart[0], "and col:", rep.selStart[1] );
+    console.log("selectionEnds on line: ", rep.selEnd[0], "and col:", rep.selEnd[1] );
+
 
     // now get just the selected column
     linesAsArray[0] = linesAsArray[0].substr(rep.selStart[1],linesAsArray[0].length);
-    linesAsArray[linesAsArray.length-1] = linesAsArray[linesAsArray.length-1].substr(0,rep.selEnd[1]);
+    linesAsArray[linesAsArray.length-1] = linesAsArray[linesAsArray.length-1].substr(0, selEnd);
     // put the text block back together from the array
     returnVal =  linesAsArray.join("\n").trim();
   },"getrep",true);
-
   return returnVal;
-
 };
