@@ -1,6 +1,19 @@
 <li class="acl-write separator"></li>
+<%
+  // grab the settings object
+  var settings = require("ep_etherpad-lite/node/utils/Settings");
+  // iterate through the actions array
+  settings.ep_copyselectionandpost.actions.forEach( function( action ){
+%>
 <li class="acl-write post-selection-button">
-  <a title="Log Selection" class="grouped-left">
-    <span class="buttonicon fa fa-star">Log Selection</span>
+  <a
+    title="<%= action.title %>"
+    class="grouped-left buttonicon <%= action.classes %>"
+    id="<%= action.id %>"
+  >
+    <span>
+      <span class="sr-only"><%= action.label %></span>
+    </span>
   </a>
 </li>
+<% }); %>
