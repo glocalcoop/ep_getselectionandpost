@@ -1,3 +1,4 @@
 {
-  "ep_copyselectionandpost.buttonLabel" : "Log Selection"
+  "ep_copyselectionandpost.logDecision" : "Log Selection as Decision",
+  "ep_copyselectionandpost.logAction" : "Log Selection as Action"
 }
