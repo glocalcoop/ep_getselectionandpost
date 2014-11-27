@@ -7,7 +7,6 @@
       "clientVars": "ep_copyselectionandpost/index"
     },
     "client_hooks": {
-      "editorInfo": "ep_copyselectionandpost/static/js/index",
       "postAceInit": "ep_copyselectionandpost/static/js/index"
     }
   }]
