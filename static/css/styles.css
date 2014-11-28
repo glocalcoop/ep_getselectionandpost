@@ -1,3 +1,39 @@
-#post-agreement {
-  border: 1px #0af solid !important;
+@font-face {
+  font-family: "fa-subset";
+  src:url("../font/fa-subset.eot");
+  src:url("../font/fa-subset.eot?#iefix") format("embedded-opentype"),
+    url("../font/fa-subset.woff") format("woff"),
+    url("../font/fa-subset.ttf") format("truetype"),
+    url("../font/fa-subset.svg#fa-subset") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+}
+
+.toolbar {
+  background-color: #fff;
+  border-bottom: none;
+}
+
+.toolbar ul li a {
+  border: none;
+  background: none;
+}
+
+.glo.buttonicon {
+  color: #666;
+  font-family: "fa-subset";
+}
+
+.buttonicon.agreement:before{
+  content: "\e801";
+}
+
+.buttonicon.action:before{
+  content: "\e800";
 }
