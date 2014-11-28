@@ -1,4 +1,4 @@
 {
-  "ep_copyselectionandpost.logDecision" : "Log Selection as Decision",
-  "ep_copyselectionandpost.logAction" : "Log Selection as Action"
+  "ep_getselectionandpost.logDecision" : "Log Selection as Decision",
+  "ep_getselectionandpost.logAction" : "Log Selection as Action"
 }

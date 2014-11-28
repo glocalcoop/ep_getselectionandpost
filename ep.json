@@ -1,13 +1,14 @@
 {
   "parts": [{
-    "name": "copyselectionandpost",
+    "name": "getselectionandpost",
     "hooks": {
-      "eejsBlock_editbarMenuRight": "ep_copyselectionandpost/index",
-      "eejsBlock_dd_format": "ep_copyselectionandpost/index",
-      "clientVars": "ep_copyselectionandpost/index"
+      "eejsBlock_styles": "ep_getselectionandpost/index",
+      "eejsBlock_editbarMenuRight": "ep_getselectionandpost/index",
+      "eejsBlock_dd_format": "ep_getselectionandpost/index",
+      "clientVars": "ep_getselectionandpost/index"
     },
     "client_hooks": {
-      "postAceInit": "ep_copyselectionandpost/static/js/index"
+      "postAceInit": "ep_getselectionandpost/static/js/index"
     }
   }]
 }
