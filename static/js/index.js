@@ -5,7 +5,7 @@ var $ = require('ep_etherpad-lite/static/js/rjquery').$;
 // This is where we add buttons and such
 // See the /index.js file and the templates directory.
 exports.postAceInit = function(hook, context, cb){
-  // bind method to post button
+  // iterate through settings, bind methods to buttons
   clientVars.actions.forEach( function(action){
     instantiateButton( action, context );
   });

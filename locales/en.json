@@ -1,4 +1,6 @@
 {
-  "ep_getselectionandpost.logDecision" : "Log Selection as Decision",
-  "ep_getselectionandpost.logAction" : "Log Selection as Action"
+  "ep_getselectionandpost.toolbar.agreement.label" : "Log Selection as Decision",
+  "ep_getselectionandpost.toolbar.agreement.title" : "Log Selection as Decision",
+  "ep_getselectionandpost.toolbar.action.label" : "Log Selection as Action",
+  "ep_getselectionandpost.toolbar.action.title" : "Log Selection as Action"
 }

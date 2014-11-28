@@ -5,14 +5,14 @@
   // iterate through the actions array
   settings.ep_getselectionandpost.actions.forEach( function( action ){
 %>
-<li class="acl-write post-selection-button">
+<li data-key="<%= action.l10n %>" data-type="button">
   <a
-    title="<%= action.title %>"
-    class="grouped-left buttontext glo <%= action.classes %>"
-    id="<%= action.id %>"
+    class="glo"
+    data-l10n-id="ep_getselectionandpost.toolbar.<%= action.l10n %>.title"
   >
-    <span>
-      <span class="sr-only"><%= action.label %></span>
+    <span class="glo buttonicon <%= action.classes %>">
+      <span class="sr-only" data-l10n-id="ep_getselectionandpost.toolbar.<%= action.l10n %>.label">
+      </span>
     </span>
   </a>
 </li>
