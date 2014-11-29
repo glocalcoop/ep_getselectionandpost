@@ -1,3 +1,6 @@
+// @todo actually set up ajax and json P request / response
+// @todo set up alert:// url to alert instead of sending request
+
 // bring in etherpad's jquery for some dom manipulation
 var $ = require('ep_etherpad-lite/static/js/rjquery').$;
 
