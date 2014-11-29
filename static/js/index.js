@@ -44,7 +44,7 @@ function getSelection(context) {
     // rep holds information about the current selection
     var rep = ace.ace_getRep(),
         text = rep.alltext,
-        howMany =  rep.selEnd[0]-1, // how many lines to grab
+        howMany =  rep.selEnd[0] - rep.selStart[0] + 1, // how many lines to grab
         // get only the lines in the selection
         linesAsArray = text.split("\n").splice( rep.selStart[0], howMany ),
         // when the startline and the end line are the same, we need to adjust
