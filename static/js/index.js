@@ -10,17 +10,19 @@ var $ = require('ep_etherpad-lite/static/js/rjquery').$;
 exports.postAceInit = function(hook, context, cb){
   // iterate through settings, bind methods to buttons
   clientVars.actions.forEach( function(action){
-    instantiateButton( action, context );
+    instantiateButton( action, context, action.id);
   });
 };
 
 
 // instantiateButton
 // sets up a button with the propoer action
-function instantiateButton( action, context ) {
+function instantiateButton( action, context, actionId ) {
+  console.log("!!!!");
   $('#'+action.id).click(function(e){
     // get the selection
-    var selectedText = getSelection(context);
+    console.log("action ID ", actionId);
+    var selectedText = (actionId == 'pad')? getPadContent(context) : getSelection(context);
     // post to configured uri here!
      postSelection( selectedText, action.uri );
     // stop the click event default action (which would possibly deselect the selection)
@@ -31,9 +33,20 @@ function instantiateButton( action, context ) {
 // postSelection
 // posts selection to uri set in settings.json
 function postSelection( selectedText, uri ) {
+  // here's where we would tell it what to do.
     console.log( "postSelection", selectedText );
     alert( "Post selection (see console) to " + uri );
 };
+
+
+function getPadContent(context) {
+  var padText;
+  context.ace.callWithAce( function(ace) {
+    console.log( ace.ace_getRep().alltext );
+    padText = ace.ace_getRep().alltext;
+  });
+  return padText;
+}
 
 // getSelection
 // get the selected text from within the ace editor
@@ -67,4 +80,3 @@ function getSelection(context) {
   },"getrep",true);
   return returnVal;
 };
-

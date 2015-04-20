@@ -19,6 +19,10 @@
   font-family: "fa-subset";
 }
 
+.buttonicon.pad_contents:before{
+  content: "\e802";
+}
+
 .buttonicon.agreement:before{
   content: "\e801";
 }
