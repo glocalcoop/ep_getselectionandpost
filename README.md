@@ -11,6 +11,34 @@ npm install PATH/TO/THIS/FOLDER (from your etherpad-lite folder)
 
 - But in actuality there are a few bugs regarding the admin manager currently so copying directly to ETHERPAD/node_modules is the way to go for now
 
+### Add settings.json in Etherpad root
+
+ "ep_getselectionandpost": {
+    "actions" : [
+      {
+       "id": "pad",
+       "uri": "http://glocalmotion.com/log/padcontents",
+       "title": "Post Pad Comments",
+       "classes": "pad_contents",
+       "l10n": "pad"
+      },
+      {
+       "id": "post_agreement",
+       "uri": "http://glocalmotion.com/log/agreement",
+       "title": "Post Selection as Agreement",
+       "classes": "agreement",
+       "l10n": "agreement"
+      },
+      {
+       "id": "post_action",
+       "uri": "http://glocalmotion.com/log/action",
+       "title": "Post Selection as Action",
+       "classes": "action",
+       "l10n": "action"
+      }
+    ]
+  },
+
 
 ## Open Questions
 
