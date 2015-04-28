@@ -11,9 +11,10 @@ npm install PATH/TO/THIS/FOLDER (from your etherpad-lite folder)
 
 - But in actuality there are a few bugs regarding the admin manager currently so copying directly to ETHERPAD/node_modules is the way to go for now
 
-### Add settings.json in Etherpad root
+### Add to settings.json in Etherpad root
 
- "ep_getselectionandpost": {
+```
+"ep_getselectionandpost": {
     "actions" : [
       {
        "id": "pad",
@@ -38,7 +39,7 @@ npm install PATH/TO/THIS/FOLDER (from your etherpad-lite folder)
       }
     ]
   },
-
+```
 
 ## Open Questions
 
